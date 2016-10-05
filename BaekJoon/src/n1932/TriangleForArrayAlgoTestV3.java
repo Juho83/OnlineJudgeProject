@@ -5,7 +5,7 @@ import java.util.List;
 
 public class TriangleForArrayAlgoTestV3 {
 
-//	private static int[][] triList;
+	private static int[][] triList;
 	private static int rootValue;
 	private static int maxSum = 0;
 	private static BinaryTree parent = new BinaryTree();
@@ -30,17 +30,24 @@ public class TriangleForArrayAlgoTestV3 {
 	}
 	
 	private static void inputBinaryTree(int[][] triList, int count) throws Exception {
-		rootValue = triList[0][0];
+		rootValue = (int)(Math.random()*10000)%100;
 		BinaryTree firstNode = new BinaryTree();
-		firstNode.setParentTree(null);
-		firstNode.setLeftValue(triList[1][0]);
-		firstNode.setRightValue(triList[1][1]);
+		firstNode.setData(rootValue);
 		parent = firstNode;
 		
-		for (int i = 2; i <= count; i++) {
+		int secondValue = (int)(Math.random()*10000)%100;
+		int thirdValue = (int)(Math.random()*10000)%100;
+		BinaryTree secondNode = new BinaryTree();
+		BinaryTree thirdNode = new BinaryTree();
+		
+		secondNode.setData(secondValue);
+		thirdNode.setData(secondValue);
+		
+		for (int i = 1; i <= count; i++) {
 //			int[] intArr = new int[i+1];
-			for (int j = 0; j < i+1; j++) {
-				BinaryTree current = new BinaryTree();
+			for (int j = 0; j < i; j++) {
+				BinaryTree leftNode = new BinaryTree();
+				current.setData((int)(Math.random()*10000)%100);
 				setParentBinaryTree(current);
 				current.setLeftValue(triList[i][j]);
 				current.setRightValue(triList[i][j+1]);

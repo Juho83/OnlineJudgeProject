@@ -1,40 +1,31 @@
 package n1932;
 
 public class BinaryTree {
-	private BinaryTree parentTree = new BinaryTree();
-	private int parentIndex;
-	private int leftValue;
-	private int rightValue;
+	private int data = 0;
+	private BinaryTree leftNode;
+	private BinaryTree rightNode;
 	
-	public void setParentTree(BinaryTree bt) {
-		this.parentTree = bt;
+	public void setData(int data) {
+		this.data = data;
 	}
 	
-	public void setParentIndex(int index) {
-		this.parentIndex = index;
+	public void setLeftNode(BinaryTree leftNode) {
+		this.leftNode = leftNode;
+	}
+
+	public void setRightNode(BinaryTree rightNode) {
+		this.rightNode = rightNode;
 	}
 	
-	public void setLeftValue(int value) {
-		this.leftValue = value;
+	public int getData() {
+		return this.data;
 	}
 	
-	public void setRightValue(int value) {
-		this.rightValue = value;
+	public BinaryTree getLeftNode() {
+		return this.leftNode;
 	}
-	
-	public BinaryTree getParentTree() {
-		return this.parentTree;
-	}
-	
-	public int getLeftValue() {
-		return this.leftValue;
-	}
-	
-	public int getRightValue() {
-		return this.rightValue;
-	}
-	
-	public int getParentIndex() {
-		return this.parentIndex;
+
+	public BinaryTree getRightNode() {
+		return this.rightNode;
 	}
 }
